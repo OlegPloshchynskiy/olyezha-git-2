@@ -1,0 +1,50 @@
+@use "components/mixins" as m;
+@use "components/variables" as v;
+
+@font-face {
+    font-family: 'Lato';
+    src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+
+.header {
+    width: 100%;
+    @include m.flex-col();
+    padding: 17px 0;    
+
+    .container {
+        width: 72.4%;        
+        @include m.flex-row();
+    }
+
+    &-menu {
+        @include m.flex-row();
+        gap: 71px;
+        ul {
+            @include m.flex-row();
+            gap: 72px;
+            li {
+                font-family: v.$font;
+                font-family: "Lato";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                color: #292929;
+            }
+        }
+    }
+
+    &-button-box {
+        @include m.flex-row();
+
+        button {
+            @include m.button();
+            padding: 13px 50px;
+            &:nth-child(1) {
+                background: none;
+                padding: 13px 35px;
+                color: black;
+            }
+        }
+    }
+}
